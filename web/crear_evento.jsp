@@ -14,10 +14,21 @@
     <body>
         <h1>CREAR EVENTO</h1>
         <form name="evento" action="crearEventoServlet" method="POST">
-        <p>Correo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='email' name='correo' size='50' required/></p>
-        <p>Nombre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='text' name='nombre' size='45' required/></p>
-        <p>Clave&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='password' name='clave' size='30' required/></p>
+        <p>Nombre Evento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='text' name='nombreEvento' required/></p>
+        <p>Tipo de Evento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <select name="tipoEvento">
+            <option value="0" selected>(Seleccione evento:)</option>
+            <option value="asado">Asado</option>
+            <option value="despedida_de_solteres">Despedida de solteres</option>
+            <option value="matrimonio">Matricidio</option>
+            <option value="futbol">Futbol</option>
+            <option value="only_amiguis">Only Amigüis</option>
+        </select>
+        <p>Quorum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='number' name='quorum' required/></p>
+        <p>Valor total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='number' name='valor' required/></p>
+        <p>Fecha del evento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='date' name='fecha' required/></p>
         <br>
+        <input type="hidden" value='${sessionScope.correoUsuario}' name='correoUsuario'/>
         <input type='submit' value='CREAR' name='crear_evento' />
         <input type='button' value='HOME' onclick="location.href='index.jsp'" style=' font-family: Verdana; font-size: 10 pt'><br />
         </form><br>
