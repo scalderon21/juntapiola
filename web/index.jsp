@@ -17,8 +17,8 @@
             <c:when test="${not empty sessionScope.nombreUsuario}">
                 <jsp:include page="banner.jsp"/>
                 <!-- Menú de navegación del sitio -->
-                <ul class="navbar">
-                    <li><a href="registrar.jsp">Crear Evento</a>
+                <ul class="navbar">          
+                    <li><a href="crear_evento.jsp">Crear Evento</a>
                     <li><a href="agregar_amigo.jsp">Agregar Amigo</a>    
                     <li><a href="listarAmigosServlet?correoUsuario=${sessionScope.correoUsuario}">Listar Amigos</a>
                     <li><a href="buscar.jsp">Ver Pagos</a>
