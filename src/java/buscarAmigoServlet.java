@@ -27,9 +27,9 @@ public class buscarAmigoServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String correoAmigo = request.getParameter("correo");
-        AmigoDAO amigoDAO = null;
-        amigoDAO = new AmigoDAOImplementacion();
-        String nombreAmigo = amigoDAO.burcarNombre(correoAmigo);
+        String correoUsuario = request.getParameter("correoUsuario");
+        AmigoDAO amigoDAO = new AmigoDAOImplementacion();
+        String nombreAmigo = amigoDAO.burcarNombre(correoAmigo,correoUsuario);
         if(nombreAmigo != null){
             Amigo a = new Amigo();
             a.setCorreoAmigo(correoAmigo);
@@ -39,6 +39,7 @@ public class buscarAmigoServlet extends HttpServlet {
             rd.forward(request, response);
         }
     }
+
 
 
 }

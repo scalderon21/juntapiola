@@ -15,7 +15,7 @@ import java.util.List;
 public interface AmigoDAO {
     boolean agregarAmigo(Amigo amigo);
     List <Amigo> obtenerAmigos(String correoUsuario);
-    void eliminarAmigo( String correoAmigo);
-    String burcarNombre(String correoUsuario);
-    void modificarAmigo(Amigo amigo, String correo);
+    void eliminarAmigo( String correoAmigo, String correoUsuario);
+    String burcarNombre(String correoAmigo,String correoUsuario);
+    void modificarAmigo(Amigo amigo, String correo,String correoUsuario);
 }

@@ -28,7 +28,7 @@ public class eliminarAmigoServlet extends HttpServlet {
             String correoAmigo = request.getParameter("correoAmigo");
             String correoUsuario = request.getParameter("correoUsuario");
             AmigoDAO DAO = new AmigoDAOImplementacion();
-            DAO.eliminarAmigo(correoAmigo);
+            DAO.eliminarAmigo(correoAmigo, correoUsuario);
             String msj = "Se ha eliminado un amigo";
             response.sendRedirect("listarAmigosServlet?msj="+msj+"&correoUsuario="+correoUsuario);
         }

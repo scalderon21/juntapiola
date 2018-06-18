@@ -17,6 +17,7 @@
         <br>
         <c:if test="${empty requestScope.msj}">
             <form action="modificarAmigosServlet" method="post">
+                <input type="hidden" value="${sessionScope.correoUsuario}" name="correoUsuario"/>
                 <input type="hidden" value="${requestScope.a.correoAmigo}" name="correoAntiguo"/><br>
                 Correo : <input type="email" placeholder="${requestScope.a.correoAmigo}" name="correo" required/><br>
                 Nombre : <input type="text" placeholder="${requestScope.a.nombreAmigo}" name="nombre" required/><br>
