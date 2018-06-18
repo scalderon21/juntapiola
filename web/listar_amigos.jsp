@@ -20,7 +20,7 @@
                     <tr>
                         <td><c:out value="${amigo.correoAmigo}"></c:out></td>
                         <td><c:out value="${amigo.nombreAmigo}"></c:out></td>
-                        <td><input type="button" value="Modificar" onclick="location='buscarAmigoServlet?correo=${amigo.correoAmigo}'"/></td>
+                        <td><input type="button" value="Modificar" onclick="location='buscarAmigoServlet?correo=${amigo.correoAmigo} &correoUsuario=${amigo.correoUsuario}'"/></td>
                         <td><input type="button" value="Eliminar" onclick="location='eliminarAmigoServlet?correoAmigo=${amigo.correoAmigo} &correoUsuario=${amigo.correoUsuario}'"/></td>
                     </tr>
                 </c:forEach>
