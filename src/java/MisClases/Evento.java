@@ -1,16 +1,29 @@
 package MisClases;
 
+import java.util.Date;
 
 public class Evento {
     private String nombreEvento;
     private String tipoEvento;
     private int quorum;
     private int total;
-    private String date;
+    private Date date;
     private String correoUsuario;
     private String Invitados[];
 
-    public Evento(String nombreEvento, String tipoEvento, int quorum, int total, String date, String correoUsuario, String[] Invitados) {
+    public Evento() {
+    }
+
+    public Evento(String nombreEvento, String tipoEvento, int quorum, int total, Date date, String correoUsuario) {
+        this.nombreEvento = nombreEvento;
+        this.tipoEvento = tipoEvento;
+        this.quorum = quorum;
+        this.total = total;
+        this.date = date;
+        this.correoUsuario = correoUsuario;
+    }
+
+    public Evento(String nombreEvento, String tipoEvento, int quorum, int total, Date date, String correoUsuario, String[] Invitados) {
         this.nombreEvento = nombreEvento;
         this.tipoEvento = tipoEvento;
         this.quorum = quorum;
@@ -18,9 +31,6 @@ public class Evento {
         this.date = date;
         this.correoUsuario = correoUsuario;
         this.Invitados = Invitados;
-    }
-
-    public Evento() {
     }
 
     public String getNombreEvento() {
@@ -55,11 +65,11 @@ public class Evento {
         this.total = total;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -83,7 +93,7 @@ public class Evento {
     public String toString() {
         return "Evento{" + "nombreEvento=" + nombreEvento + ", tipoEvento=" + tipoEvento + ", quorum=" + quorum + ", total=" + total + ", date=" + date + ", correoUsuario=" + correoUsuario + ", Invitados=" + Invitados + '}';
     }
-    
+
     
     
 }

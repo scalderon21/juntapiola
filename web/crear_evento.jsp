@@ -25,8 +25,8 @@
             <option value="only_amiguis">Only Amigüis</option>
         </select>
         <p>Quorum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='number' name='quorum' required/></p>
-        <p>Valor total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='number' name='valor' required/></p>
-        <p>Fecha del evento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='date' name='fecha' required/></p>
+        <p>Valor total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='number' name='total' required/></p> 
+        <p>Fecha del evento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='text' name='fecha' pattern="/^(0[1-9]|[12]\d|3[01])[\/]0[1-9]|1[0-2])[\/](19|20)\d{2}$/g" required/></p>
         <br>
         <input type="hidden" value='${sessionScope.correoUsuario}' name='correoUsuario'/>
         <input type='submit' value='CREAR' name='crear_evento' />
