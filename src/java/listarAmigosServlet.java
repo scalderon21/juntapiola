@@ -34,6 +34,7 @@ private static final long serialVersionUID = 1L;
         if (cant > 0){
             request.setAttribute("listaAmigos", misAmigos);                 
             request.setAttribute("cantidadAmigos", cant);
+            request.setAttribute("correoUsuario", correoUsuario);
             String msjBorrado = request.getParameter("msj");
             if(msjBorrado != null){
                 request.setAttribute("msjBorrado", msjBorrado);
