@@ -5,11 +5,13 @@
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:include page="banner.jsp"/>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CREAR EVENTO</title>
+        <title>Junta Piola</title>
+        <link rel="shortcut icon" href="imagenes/icono.png">
+        <link rel="stylesheet" href="misestilos.css">
     </head>
     <body>
         <h1>CREAR EVENTO</h1>
@@ -28,6 +30,7 @@
         <p>Valor total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='number' name='total' required/></p> 
         <p>Fecha del evento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='text' name='fecha' pattern="/^(0[1-9]|[12]\d|3[01])[\/]0[1-9]|1[0-2])[\/](19|20)\d{2}$/g" required/></p>
         <br>
+        
         <c:if test="${requestScope.cantidadAmigos > 0 }">
             <table><tr><td>Correo</td><td>Nombre</td></tr>
                 <c:forEach items="${requestScope.listaAmigos}" var="amigo">
@@ -41,6 +44,7 @@
             </table><br>
             Total de Amigos = <c:out value="${requestScope.cantidadAmigos}" escapeXml="true"></c:out>          
         </c:if><br>
+        
         <input type="hidden" value='${sessionScope.correoUsuario}' name='correoUsuario'/>
         <input type='submit' value='CREAR' name='crear_evento' />
         <input type='button' value='HOME' onclick="location.href='index.jsp'" style=' font-family: Verdana; font-size: 10 pt'><br />

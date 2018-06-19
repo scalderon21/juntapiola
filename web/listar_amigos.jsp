@@ -5,6 +5,7 @@
 --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<jsp:include page="banner.jsp"/>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +16,7 @@
     <body>
         <h1>LISTADO DE AMIGOS</h1><br>
         <c:if test="${requestScope.cantidadAmigos > 0 }">
-            <table><tr><td>Correo</td><td>Nombre</td></tr>
+            <table><tr><th>Correo</th><th>Nombre</th><th> </th><th> </th></tr>
                 <c:forEach items="${requestScope.listaAmigos}" var="amigo">
                     <tr>
                         <td><c:out value="${amigo.correoAmigo}"></c:out></td>

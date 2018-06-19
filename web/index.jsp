@@ -10,14 +10,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Junta Piola</title>
-        <link rel="stylesheet" href="misestilos.css">
+        <link rel="stylesheet" href="misestilos.css"/>
     </head>
     <body>
         <c:choose>
             <c:when test="${not empty sessionScope.nombreUsuario}">
                 <jsp:include page="banner.jsp"/>
                 <!-- Menú de navegación del sitio -->
-                <ul class="navbar">          
+                <ul class="navbar">
                     <li><a href="crear_evento.jsp">Crear Evento</a>
                     <li><a href="agregar_amigo.jsp">Agregar Amigo</a>    
                     <li><a href="listarAmigosServlet?correoUsuario=${sessionScope.correoUsuario}">Listar Amigos</a>
@@ -25,17 +25,18 @@
                     <li><a href="salir.jsp">Cerrar Sesion</a>
                 </ul>
                 <!-- Contenido principal -->
-                <h1>Tienda Virtual</h1>
+                <h1>Junta Piola</h1>
 
-                <p>¡Bienvenido a nuestra tienda virtual!
+                <p>¡Bienvenido a nuestra pagina web!
 
-                <p>Aquí encontrará lo que usted está buscando.
-                <br>También le informamos que tenemos importantes promociones que no lo dejarán indiferente...
+                <p>Aquí la idea es ayudarte a ser organizado con las juntas que prepares
+                    <br> con tus amigos y asi poder pasarla mejor y sin preocupaciones!<br>
+                <br>También le informamos que pronto tendremos mas actulizaciones<br> para usted...
 
-                <p>Estamos a su disposición
-
-                <!-- Este es un comentario en HTML -->
-                <address><br></address>
+                <p>¡¡¡Estamos a su disposición!!!
+                <br>    
+                <br>
+                <div><img src="BRINDIS1.png"></div>
             </c:when>
             <c:otherwise>
                 Debe loguearse en el sistema<br>

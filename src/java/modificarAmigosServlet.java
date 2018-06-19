@@ -40,4 +40,3 @@ public class modificarAmigosServlet extends HttpServlet {
         rd.forward(request, response);
     }
 }
-

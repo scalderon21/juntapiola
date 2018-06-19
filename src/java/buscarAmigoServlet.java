@@ -41,5 +41,4 @@ public class buscarAmigoServlet extends HttpServlet {
     }
 
 
-
 }

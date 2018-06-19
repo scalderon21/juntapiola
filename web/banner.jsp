@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <p align="right"><font color="green">Usuario Conectado: ${sessionScope.nombreUsuario}</font></p>
-        <p align="right"><font color="green">Correo Usuario: ${sessionScope.correoUsuario}</font></p>
+        <p align="right"><font color="pink">Usuario Conectado: ${sessionScope.nombreUsuario}</font></p>
+        <p align="right"><font color="pink">Correo Usuario: ${sessionScope.correoUsuario}</font></p>
     </body>
 </html>
