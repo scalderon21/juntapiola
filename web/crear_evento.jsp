@@ -52,7 +52,7 @@
             <input type='submit' value='CREAR' name='crear_evento' />
             <input type='button' value='HOME' onclick="location.href='index.jsp'" style=' font-family: Verdana; font-size: 10 pt'><br/>
             <br>  
-        </c:if>>
+        </c:if>
         </form><br>
     <p><c:out value="${requestScope.mensajeError}"/> </p>
     </body>
