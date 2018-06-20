@@ -21,7 +21,7 @@
                     <li><a href="crear_evento.jsp">Crear Evento</a>
                     <li><a href="agregar_amigo.jsp">Agregar Amigo</a>    
                     <li><a href="listarAmigosServlet?correoUsuario=${sessionScope.correoUsuario}">Listar Amigos</a>
-                    <li><a href="buscar.jsp">Ver Pagos</a>
+                    <!--<li><a href="buscar.jsp">Ver Pagos</a>-->
                     <li><a href="salir.jsp">Cerrar Sesion</a>
                 </ul>
                 <!-- Contenido principal -->

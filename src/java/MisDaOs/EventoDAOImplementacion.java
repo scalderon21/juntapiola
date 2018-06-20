@@ -20,7 +20,7 @@ public class EventoDAOImplementacion implements EventoDAO{
     public boolean agregarEvento(Evento evento) {
         boolean agregado = false;
         try {
-            String query = "insert into evento (tipoEvento, nombreEvento, quorum, total, fecha, correoUsuario) values (?,?, ?, ?, ?, ?) ";
+            String query = "insert into evento (tipoEvento, nombreEvento, quorum, total, fecha) values (?,?, ?, ?, ?) ";
             PreparedStatement stmt = null;
             stmt = conn.prepareStatement(query);
             stmt.setString(1,evento.getTipoEvento());
@@ -30,7 +30,6 @@ public class EventoDAOImplementacion implements EventoDAO{
             java.util.Date fec = evento.getDate();
             java.sql.Date fecha = new java.sql.Date(fec.getTime());
             stmt.setDate(5, fecha);
-            stmt.setString(6,evento.getCorreoUsuario());
             stmt.executeUpdate();
             agregado = true;
         } catch (SQLException ex) {

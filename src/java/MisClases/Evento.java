@@ -3,6 +3,7 @@ package MisClases;
 import java.util.Date;
 
 public class Evento {
+    private int idEvento;
     private String nombreEvento;
     private String tipoEvento;
     private int quorum;
@@ -31,6 +32,14 @@ public class Evento {
         this.date = date;
         this.correoUsuario = correoUsuario;
         this.Invitados = Invitados;
+    }
+
+    public int getIdEvento() {
+        return idEvento;
+    }
+
+    public void setIdEvento(int idEvento) {
+        this.idEvento = idEvento;
     }
 
     public String getNombreEvento() {

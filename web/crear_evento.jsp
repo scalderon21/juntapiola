@@ -17,12 +17,16 @@
         <h1>CREAR EVENTO</h1>   
         
         <input type='button' value='Invitar amigos Evento' onclick="location.href='listarAmigosEventoServlet?correoUsuario=${sessionScope.correoUsuario}'" style=' font-family: Verdana; font-size: 10 pt'><br />
+        <br>  
+        <br>  
+        <br>  
+       
         <c:if test="${sessionScope.misAmigosEvento != null }">
         
             <form name="evento" action="crearEventoServlet" method="POST">
             <p>Nombre Evento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='text' name='nombreEvento' required/></p>
             <p>Tipo de Evento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-            <select name="tipoEvento">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="tipoEvento" required>
                 <option value="0" selected>(Seleccione evento:)</option>
                 <option value="asado">Asado</option>
                 <option value="despedida_de_solteres">Despedida de solteres</option>
@@ -32,15 +36,23 @@
             </select>
             <p>Quorum&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='number' name='quorum' required/></p>
             <p>Valor total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='number' name='total' required/></p> 
-            <p>Fecha del evento&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='text' name='fecha' pattern="/^(0[1-9]|[12]\d|3[01])[\/]0[1-9]|1[0-2])[\/](19|20)\d{2}$/g" required/></p>
+            <p>Fecha del evento (dd/mm/aaaa)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='text' name='fecha' pattern="/^(0[1-9]|[12]\d|3[01])[\/]0[1-9]|1[0-2])[\/](19|20)\d{2}$/g" required/></p>
+            <br> 
+            <table><tr><th>Correo</th><th>Nombre</th><th> </th><th> </th></tr>
+                <c:forEach items="${sessionScope.misAmigosEvento}" var="amigo">
+                    <tr>                   
+                        <td><c:out value="${amigo.correoAmigo}"></c:out></td>
+                        <td><c:out value="${amigo.nombreAmigo}"></c:out></td>
+                    </tr>
+                </c:forEach>
+            </table><br>
             <br>    
-
-
+            <input type="hidden" value='${sessionScope.misAmigosEvento}' name='listaAmigosEvento'/>
             <input type="hidden" value='${sessionScope.correoUsuario}' name='correoUsuario'/>
-            <input type='submit' value='CREAR' name='crear_evento' /><br />
-
+            <input type='submit' value='CREAR' name='crear_evento' />
+            <input type='button' value='HOME' onclick="location.href='index.jsp'" style=' font-family: Verdana; font-size: 10 pt'><br/>
+            <br>  
         </c:if>>
-        <input type='button' value='HOME' onclick="location.href='index.jsp'" style=' font-family: Verdana; font-size: 10 pt'><br />
         </form><br>
     <p><c:out value="${requestScope.mensajeError}"/> </p>
     </body>

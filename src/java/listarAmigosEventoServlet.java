@@ -52,7 +52,7 @@ List <Amigo> misAmigosEvento = new ArrayList<>();
             request.setAttribute("cantidadAmigos", cant);
             request.setAttribute("correoUsuario", correoUsuario);
             
-            session.setAttribute("misAmigosEvento", misAmigosEvento.toString());
+            session.setAttribute("misAmigosEvento", misAmigosEvento);
             String msjBorrado = request.getParameter("msj");
             if(msjBorrado != null){
                 request.setAttribute("msjBorrado", msjBorrado);
